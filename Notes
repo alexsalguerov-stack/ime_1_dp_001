@@ -1,0 +1,29 @@
+Clase: Define las caracteristicas y capacidades de un mismo tipo de entidad
+    Una clase bien diseñada tiene una sola razon para cambiar (responsabilidad unica), si mas de una responsabilidad es asignada el sistema se vuelve fragil y con baja cohesion.
+
+Atributo: Lista de caracteristicas que le pertenecen a una clase
+Objeto: Entidad perteneciente a una clase con una serie de atributos especificos 
+Metodo: comportamiento o accion de un objeto
+
+Encapsulamiento
+Protege el estado interno de un objeto, al declarar como privados los atributos solo se puede acceder a ellos atraves de metodos controlados (getter/setters), esto evita que se pueda modificar el estado de un objeto de forma inesperada o erronea.
+
+Abstraccion
+Al tomar solo los aspectos relevantes para el proceso o los que el problema exige se puede simplificar el sistema sin perder la precision.
+
+Relacion HAS-A
+Describe la composicion o agregacion, una clase contiene objetos de otra clase como parte de su estructura interna, agrupa objetos de distintas clases para generar una clase nueva.
+
+Relacion IS-A (herencia)
+
+Mensajes entre objetos
+Los objetos colaboran entre si a traves de mensajes (invoca metodos del objeto contactado) sin acceder a los datos internos de forma directa.
+
+determinar compiten
+competencia batalla | robots tipo ganador
+
+Constructor por defecto
+Este no recibe parametros, el objeto se crea vacio o con valores predeterminados. Puede generar objetos en estado invalido si no se inicializa despues.
+
+Constructor parametrizado
+Recibe los datos necesarios al momento de la creacion. Garantiza que el objeto nazca con las caracteristicas basicas para existir.
