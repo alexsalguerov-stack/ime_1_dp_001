@@ -1,33 +1,33 @@
 Modelo estatico
-Representa la estructura del sistema: clases, atributos, relaciones. No cambia en el tiempo de ejecucion, se diseña antes de 
+Representa la estructura del sistema: clases, atributos, relaciones. No cambia en el tiempo de ejecucion, se diseña antes de
 escribir el codigo
 
 Modelo dinamico
-Representa el comportamiento en tiempo de ejecucion, los mensajes que se envian entre objetos, los cambios de estado que 
+Representa el comportamiento en tiempo de ejecucion, los mensajes que se envian entre objetos, los cambios de estado que
 ocurren y el orden en el que ocurren.
 
 Estatico + Dinamico
-
+La comprensión total de un sistema requiere ambos: el modelo estático define 'qué hay' y el modelo dinámico define 'cómo interactúan'.
 
 Interfaz -> Implementacion
-Separar la declaracion de la clase .h de su implementacion .cpp permite 
+Separar la declaracion de la clase .h de su implementacion .cpp permite
+reducir los tiempos de compilación (solo se recompila lo que cambia) y ocultar la complejidad de la implementación al usuario de la clase.
 
 Constructores y listas de inicializacion
-Es preferible usar una lista de inicializacion dentro del cuerpo del constructor por que inicializa los atributos directamente, 
+Es preferible usar una lista de inicializacion dentro del cuerpo del constructor por que inicializa los atributos directamente,
 evitando una construccion por defecto sguida de una asignacion posterior.
 
 Const
-Promete no alterar el estado del objeto 
+Promete no alterar el estado del objeto o de los argumentos pasados a una función, asegurando la integridad de los datos.
 
 Const& (Practica estandard para parametros de solo lectura)
 Evita una copia inecesaria de objetos grandes y garantiza que la funcion no los modificara.
 
 Referencia
 Es un alias para una variable existente y se crea usando &
-
     - Siempre existe el objeto y es valido
     - No se necesita reasignar el destino
-    - Nose necesita expresar la ausencia
+    - No se necesita expresar la ausencia
     - Se evita la sintaxis de referencia
 
     string food = "Pizza";  // food variable
@@ -35,7 +35,6 @@ Es un alias para una variable existente y se crea usando &
 
 Puntero
 Variable que almacena una direccion de memoria y su valor, se crea usando *, es una entidad independiente que puede cambiar a que direccion apunta.
-
     - Reasignarse en cualquier momento para apuntar a otra Variable
     - Puede tener un valor especial nullptr (no apunta a nada), cuando el objeto puede no existir con nullptr se puede expresar esa ausencia.
 
@@ -51,14 +50,15 @@ Sobrecarga de funciones
 Una operacion exactamente igual puede ocurrir con info completa o info minima. La sobrecarga permiete representar ambos casos con el mismo nombre de funcion.
 
  Errores comunes
- -
+ - Olvidar el destructor virtual en clases base (causa fugas de memoria).
+ - 'Slicing' al pasar objetos por valor en lugar de referencia/puntero en polimorfismo.
+ - Uso de punteros crudos sin liberar la memoria (`delete`).
 
 Sobrecarga de operadores
-Permite que operadores como +, ==, << funcionen con tus propias clases.
-
+Permite que operadores como +, ==, << funcionen con tus propias clases, mejorando la legibilidad del código.
     Equipo equipoFucionado = equipo1 + equipo2;
-
-    bool
+    Ejemplo: bool operator == (const MyClass& other) const { ... }
 
 Namespace
-Cuando un proyecto aumenta de tamaño haciendo uso de multiples librerias
+Cuando un proyecto aumenta de tamaño haciendo uso de multiples librerias, los namespaces evitan colisiones de nombres al agrupar entidades relacionadas bajo un identificador único.
+
